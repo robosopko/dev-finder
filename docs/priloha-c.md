@@ -90,6 +90,87 @@ nic
 Fungoval dobre, lebo mu dal MCP pristup k Figme aj ku context7, aby mal k dispozicii najnovsiu tailwind dokumentaciu
 ```
 
+### Prompt #3: **\*\***\*\*\*\***\*\***\_**\*\***\*\*\*\***\*\***
+
+**Nástroj:** [ Copilot Agent Claude Opus 4.5 ]  
+**Kontext:** [ Setup projektu ]
+
+**Prompt:**
+
+```
+We will use svgs in the project. Onboard svgr to the project to work with svg files in React conveniently, update the TECH_STACK document a save the svg files in a proper place in project. Logo: https://www.figma.com/design/CSKrPZ4ETBC5JY5zjRoTXn/github-user-search-app?node-id=3-993&m=dev Icons: https://www.figma.com/design/CSKrPZ4ETBC5JY5zjRoTXn/github-user-search-app?node-id=5-134&m=dev Use #context7 for docs on svgr and next.js. Use #figma
+[figma][context7]
+```
+
+**Výsledok:**  
+[x] ⭐⭐⭐⭐ Dobré, potreboval malé úpravy
+
+**Čo som musel upraviť / opraviť:**
+
+```
+logo nebolo spravne importnute, trebalo importnut manualne
+```
+
+**Poznámky / Learnings:**
+
+```
+Fungoval fajn, vsetky assety az na logo importol z Figmy spravne. Poucenie - treba pre istotu vzdy skontrolovat vsetko co spravi.
+```
+
+### Prompt #4: **\*\***\*\*\*\***\*\***\_**\*\***\*\*\*\***\*\***
+
+**Nástroj:** [ Copilot Agent Claude Opus 4.5 ]  
+**Kontext:** [ Zakladne komponenty ]
+
+**Prompt:**
+
+```
+Implement the Search button inside components folder according to Figma: https://www.figma.com/design/CSKrPZ4ETBC5JY5zjRoTXn/github-user-search-app?node-id=5-172&m=dev Make sure to implement all states - default, hover, focus. Implement it as a pure component which will be used inside other components. Use the shadcn-ui button from components/ui as base. Use #context7 for docs, use #figma
+[figma][context7]
+```
+
+**Výsledok:**  
+[x] ⭐⭐⭐⭐ Dobré, potreboval malé úpravy
+
+**Čo som musel upraviť / opraviť:**
+
+```
+Focus state nebol spravne implementovany, vyriesene dodatocnym promtom
+```
+
+**Poznámky / Learnings:**
+
+```
+Zlozitejsie stylovanie nie vzdy zvladne na 1x
+```
+
+### Prompt #5: **\*\***\*\*\*\***\*\***\_**\*\***\*\*\*\***\*\***
+
+**Nástroj:** [ Copilot Agent Claude Opus 4.5 ]  
+**Kontext:** [ Zakladne komponenty ]
+
+**Prompt:**
+
+```
+The Focus state is not according to Figma, see https://www.figma.com/design/CSKrPZ4ETBC5JY5zjRoTXn/github-user-search-app?node-id=5-177&m=dev, maybe its overriden by the base shadcn-ui styling, Use #context7 for docs on shadcn-ui and tailwind and fix the focus state styling according to Figma. Use #figma
+[figma][context7][screenshot]
+```
+
+**Výsledok:**  
+[x] ✅ Fungoval perfektne (first try)
+
+**Čo som musel upraviť / opraviť:**
+
+```
+nic
+```
+
+**Poznámky / Learnings:**
+
+```
+Pri detailnom zamerani na problem a dostatocnom kontexte ho zvacsa vie AI vyriesit
+```
+
 ## 3. Problémy a Riešenia
 
 > 💡 **Tip:** Problémy sú cenné! Ukazujú ako riešiš problémy s AI.

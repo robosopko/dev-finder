@@ -1,0 +1,20 @@
+<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Center circle -->
+  <circle cx="10" cy="10" r="5" fill="currentColor"/>
+  <!-- Top ray -->
+  <rect x="9" y="0" width="2" height="3" rx="1" fill="currentColor"/>
+  <!-- Top-right ray -->
+  <rect x="14.95" y="3.636" width="2" height="3" rx="1" transform="rotate(45 14.95 3.636)" fill="currentColor"/>
+  <!-- Right ray -->
+  <rect x="17" y="9" width="3" height="2" rx="1" fill="currentColor"/>
+  <!-- Bottom-right ray -->
+  <rect x="14.95" y="14.95" width="2" height="3" rx="1" transform="rotate(135 14.95 14.95)" fill="currentColor"/>
+  <!-- Bottom ray -->
+  <rect x="9" y="17" width="2" height="3" rx="1" fill="currentColor"/>
+  <!-- Bottom-left ray -->
+  <rect x="5.05" y="14.95" width="2" height="3" rx="1" transform="rotate(-135 5.05 14.95)" fill="currentColor"/>
+  <!-- Left ray -->
+  <rect x="0" y="9" width="3" height="2" rx="1" fill="currentColor"/>
+  <!-- Top-left ray -->
+  <rect x="5.05" y="3.636" width="2" height="3" rx="1" transform="rotate(-45 5.05 3.636)" fill="currentColor"/>
+</svg>

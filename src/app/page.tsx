@@ -1,3 +1,4 @@
+import { SearchButton } from "@/components/ui/search-button";
 import Image from "next/image";
 
 export default function Home() {
@@ -58,6 +59,7 @@ export default function Home() {
           >
             Documentation
           </a>
+          <SearchButton />
         </div>
       </main>
     </div>

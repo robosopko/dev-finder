@@ -27,6 +27,7 @@
     "tailwind-merge": "^3.4.0"
   },
   "devDependencies": {
+    "@svgr/webpack": "^8.1.0",
     "@tailwindcss/postcss": "^4",
     "@tanstack/eslint-plugin-query": "^5.91.2",
     "@types/node": "^20",

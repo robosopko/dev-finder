@@ -39,11 +39,12 @@ A GitHub Dashboard application with two main features:
 
 ### Development Tools
 
-| Technology                         | Purpose                      |
-| ---------------------------------- | ---------------------------- |
-| **ESLint**                         | Code linting                 |
-| **@tanstack/eslint-plugin-query**  | React Query specific linting |
-| **@tanstack/react-query-devtools** | React Query debugging        |
+| Technology                         | Purpose                              |
+| ---------------------------------- | ------------------------------------ |
+| **ESLint**                         | Code linting                         |
+| **@tanstack/eslint-plugin-query**  | React Query specific linting         |
+| **@tanstack/react-query-devtools** | React Query debugging                |
+| **@svgr/webpack**                  | Transform SVGs into React components |
 
 ---
 
@@ -148,6 +149,65 @@ npx auth secret
 
 This will add `AUTH_SECRET` to your `.env.local` file.
 
+### Step 9: Install SVGR for SVG Components
+
+```bash
+npm install -D @svgr/webpack
+```
+
+Update `next.config.ts` to handle SVG imports:
+
+```typescript
+import type { NextConfig } from "next";
+
+const nextConfig: NextConfig = {
+  webpack(config) {
+    // Grab the existing rule that handles SVG imports
+    const fileLoaderRule = config.module.rules.find((rule: { test?: RegExp }) =>
+      rule.test?.test?.(".svg")
+    );
+
+    config.module.rules.push(
+      // Reapply the existing rule, but only for svg imports ending in ?url
+      {
+        ...fileLoaderRule,
+        test: /\.svg$/i,
+        resourceQuery: /url/, // *.svg?url
+      },
+      // Convert all other *.svg imports to React components
+      {
+        test: /\.svg$/i,
+        issuer: fileLoaderRule.issuer,
+        resourceQuery: { not: [...fileLoaderRule.resourceQuery.not, /url/] }, // exclude if *.svg?url
+        use: ["@svgr/webpack"],
+      }
+    );
+
+    // Modify the file loader rule to ignore *.svg, since we have it handled now.
+    fileLoaderRule.exclude = /\.svg$/i;
+
+    return config;
+  },
+};
+
+export default nextConfig;
+```
+
+Create TypeScript declaration for SVG imports in `src/types/svg.d.ts`:
+
+```typescript
+declare module "*.svg" {
+  import { FC, SVGProps } from "react";
+  const ReactComponent: FC<SVGProps<SVGSVGElement>>;
+  export default ReactComponent;
+}
+
+declare module "*.svg?url" {
+  const content: string;
+  export default content;
+}
+```
+
 ---
 
 ## 📁 Project Structure
@@ -165,6 +225,17 @@ gh-dashboard/
 │   │   ├── layout.tsx                    # Root layout with providers
 │   │   ├── page.tsx                      # Home page (public search)
 │   │   └── globals.css                   # Global styles + Tailwind
+│   ├── assets/
+│   │   └── icons/                        # SVG icons as React components
+│   │       ├── index.ts                  # Icon exports
+│   │       ├── logo.svg                  # devfinder logo
+│   │       ├── moon.svg                  # Dark mode icon
+│   │       ├── sun.svg                   # Light mode icon
+│   │       ├── search.svg                # Search icon
+│   │       ├── twitter.svg               # Twitter/X icon
+│   │       ├── location.svg              # Location pin icon
+│   │       ├── link.svg                  # URL/link icon
+│   │       └── company.svg               # Company/building icon
 │   ├── components/
 │   │   ├── ui/                           # shadcn/ui components
 │   │   ├── providers/
@@ -184,7 +255,8 @@ gh-dashboard/
 │   ├── hooks/
 │   │   └── use-github-user.ts            # React Query hook for user data
 │   ├── types/
-│   │   └── github.ts                     # TypeScript types for GitHub API
+│   │   ├── github.ts                     # TypeScript types for GitHub API
+│   │   └── svg.d.ts                      # TypeScript declaration for SVG imports
 │   └── auth.ts                           # NextAuth configuration
 ├── .env.local                            # Environment variables
 ├── next.config.ts                        # Next.js configuration
@@ -307,12 +379,69 @@ Based on Figma design (`github-user-search-app.fig`):
 
 ---
 
+## 🖼️ SVG Icons Usage
+
+SVG icons are stored in `src/assets/icons/` and can be imported as React components thanks to SVGR.
+
+### Available Icons
+
+| Icon Name    | File           | Purpose               |
+| ------------ | -------------- | --------------------- |
+| Logo         | `logo.svg`     | devfinder logo        |
+| MoonIcon     | `moon.svg`     | Dark mode toggle      |
+| SunIcon      | `sun.svg`      | Light mode toggle     |
+| SearchIcon   | `search.svg`   | Search input icon     |
+| TwitterIcon  | `twitter.svg`  | Twitter/X social link |
+| LocationIcon | `location.svg` | User location         |
+| LinkIcon     | `link.svg`     | Website/URL link      |
+| CompanyIcon  | `company.svg`  | Company/organization  |
+
+### Usage Example
+
+```tsx
+// Import from the icons index
+import { SearchIcon, MoonIcon, SunIcon } from "@/assets/icons";
+
+// Or import individually
+import SearchIcon from "@/assets/icons/search.svg";
+
+// Use as React component with full SVG props support
+const SearchButton = () => (
+  <button>
+    <SearchIcon className="w-5 h-5 text-blue-500" />
+  </button>
+);
+
+// Icons use currentColor, so they inherit text color
+const ThemeToggle = ({ isDark }: { isDark: boolean }) => (
+  <button className="text-gray-700 dark:text-white">
+    {isDark ? (
+      <SunIcon className="w-5 h-5" />
+    ) : (
+      <MoonIcon className="w-5 h-5" />
+    )}
+  </button>
+);
+```
+
+### Importing SVG as URL
+
+If you need the SVG as a URL (for `<img>` tags), use the `?url` suffix:
+
+```tsx
+import logoUrl from "@/assets/icons/logo.svg?url";
+
+const Logo = () => <img src={logoUrl} alt="devfinder" />;
+```
+
+---
+
 ## 📦 Full Installation Command (One-liner)
 
 After creating the Next.js project, run:
 
 ```bash
-npm install @tanstack/react-query @tanstack/react-query-devtools next-auth@beta next-themes && npm install -D @tanstack/eslint-plugin-query && npx shadcn@latest init && npx shadcn@latest add button input card avatar skeleton badge separator dropdown-menu navigation-menu
+npm install @tanstack/react-query @tanstack/react-query-devtools next-auth@beta next-themes && npm install -D @tanstack/eslint-plugin-query @svgr/webpack && npx shadcn@latest init && npx shadcn@latest add button input card avatar skeleton badge separator dropdown-menu navigation-menu
 ```
 
 ---
@@ -327,3 +456,4 @@ npm install @tanstack/react-query @tanstack/react-query-devtools next-auth@beta 
 - [Tailwind CSS](https://tailwindcss.com)
 - [next-themes](https://github.com/pacocoursey/next-themes)
 - [GitHub REST API](https://docs.github.com/en/rest)
+- [SVGR - SVG to React](https://react-svgr.com)
