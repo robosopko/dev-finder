@@ -35,6 +35,36 @@ function MyComponent({ title }: Props) {
 }
 ```
 
+### Next.js App Router
+
+This is a **Next.js 15 project using the App Router**. By default, all components are Server Components.
+
+**Add `"use client"` directive** at the top of files for components that:
+
+- Use React hooks (`useState`, `useEffect`, `useRef`, etc.)
+- Have internal state
+- Use event handlers (`onClick`, `onSubmit`, etc.)
+- Use browser-only APIs
+
+```tsx
+// ✅ Client Component (has state/hooks)
+"use client";
+
+import { useState } from "react";
+
+const Counter = () => {
+  const [count, setCount] = useState(0);
+  return <button onClick={() => setCount(count + 1)}>{count}</button>;
+};
+```
+
+```tsx
+// ✅ Server Component (no directive needed - default)
+const StaticCard = ({ title }: Props) => {
+  return <div>{title}</div>;
+};
+```
+
 ### TypeScript
 
 - Use explicit types for props interfaces

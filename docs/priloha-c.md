@@ -201,6 +201,33 @@ nic
 Vygeneroval fajn copilot-instructions subor kde bolo vsetko co som chcel, pomohli mu najma uz predtym vytvorene tech stack dokumenty, ktore dostal v kontexte.
 ```
 
+### Prompt #7: **\*\***\*\*\*\***\*\***\_**\*\***\*\*\*\***\*\***
+
+**Nástroj:** [ Copilot Agent Claude Opus 4.5 ]  
+**Kontext:** [ Zakladne komponenty ]
+
+**Prompt:**
+
+```
+Create a SearchBar component based on Figma: https://www.figma.com/design/CSKrPZ4ETBC5JY5zjRoTXn/github-user-search-app?node-id=5-351&m=dev Make sure to implement all the states as mentioned in Figma - Default, Hover, Active, Error, Focus. Start with Default, the other states are slight variations of Default. Use existing SearchButton and other shadcn-ui components, use existing search.svg icon from assets/icons. Use #context7 for docs, use #figma
+[figma][context7]
+```
+
+**Výsledok:**  
+[ ] ⭐⭐⭐⭐ Dobré, potreboval malé úpravy
+
+**Čo som musel upraviť / opraviť:**
+
+```
+trebalo doplnit "use client", kedze pouziva interny state
+```
+
+**Poznámky / Learnings:**
+
+```
+Doplnil som mu instrukcie do copilot-instruction ohladom pouzitia "use client" (update the copilot-instructions: mention that this is a next.js project, so all components that have internal state or use hooks need to be marked with "use client")
+```
+
 ## 3. Problémy a Riešenia
 
 > 💡 **Tip:** Problémy sú cenné! Ukazujú ako riešiš problémy s AI.

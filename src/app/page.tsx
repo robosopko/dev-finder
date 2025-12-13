@@ -1,4 +1,6 @@
-import { SearchButton } from "@/components/ui/search-button";
+"use client";
+
+import { SearchBar } from "@/components/ui/search-bar";
 import Image from "next/image";
 
 export default function Home() {
@@ -59,7 +61,12 @@ export default function Home() {
           >
             Documentation
           </a>
-          <SearchButton />
+        </div>
+        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row w-full">
+          <SearchBar
+            error="No results"
+            onSubmit={(value) => console.log(value)}
+          />
         </div>
       </main>
     </div>
