@@ -171,6 +171,36 @@ nic
 Pri detailnom zamerani na problem a dostatocnom kontexte ho zvacsa vie AI vyriesit
 ```
 
+### Prompt #6: **\*\***\*\*\*\***\*\***\_**\*\***\*\*\*\***\*\***
+
+**Nástroj:** [ Copilot Agent Claude Opus 4.5 ]  
+**Kontext:** [ Zakladne nastavenie ]
+
+**Prompt:**
+
+```
+Generate the copilot instructions file - mention the techstack and a few simple rules:
+- we have custom tailwind theme classed defined according to Figma style guide, use them
+- when defining new React components, use const, not function definition
+- don't assume you have the latest knowledge on libraries in this project, you have access to context7 tool, which provides the latest docs, use it
+[TECH_STACK.md][TAILWIND_THEME_PLAN.md]
+```
+
+**Výsledok:**  
+[x] ✅ Fungoval perfektne (first try)
+
+**Čo som musel upraviť / opraviť:**
+
+```
+nic
+```
+
+**Poznámky / Learnings:**
+
+```
+Vygeneroval fajn copilot-instructions subor kde bolo vsetko co som chcel, pomohli mu najma uz predtym vytvorene tech stack dokumenty, ktore dostal v kontexte.
+```
+
 ## 3. Problémy a Riešenia
 
 > 💡 **Tip:** Problémy sú cenné! Ukazujú ako riešiš problémy s AI.
