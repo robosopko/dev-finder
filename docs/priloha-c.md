@@ -65,30 +65,30 @@ Fungoval dobre, lebo som specifikoval technologie, ktore chcem pouzit, dal som m
 
 ### Prompt #2: **\*\***\*\*\*\***\*\***\_**\*\***\*\*\*\***\*\***
 
-**Nástroj:** **\*\*\*\***\_**\*\*\*\***  
-**Kontext:** **\*\*\*\***\_**\*\*\*\***
+**Nástroj:** [ Copilot Agent Claude Opus 4.5 ]  
+**Kontext:** [ Setup projektu ]
 
 **Prompt:**
 
 ```
-
+Study the Figma designs here: https://www.figma.com/design/CSKrPZ4ETBC5JY5zjRoTXn/github-user-search-app?node-id=1-69&p=f&m=dev and create a plan to update the tailwind theme and settings according to the style guide - colors, typography, spacing and radius. Use #context7 for docs, use #figma to access Figma. Write the plan into a md file which will be your blueprint for execution later.
+[figma][context7]
 ```
 
-**Výsledok:**
+**Výsledok:**  
+[x] ✅ Fungoval perfektne (first try)
 
-**Úpravy:**
-
-```
-
-```
-
-**Poznámky:**
+**Čo som musel upraviť / opraviť:**
 
 ```
-
+nic
 ```
 
----
+**Poznámky / Learnings:**
+
+```
+Fungoval dobre, lebo mu dal MCP pristup k Figme aj ku context7, aby mal k dispozicii najnovsiu tailwind dokumentaciu
+```
 
 ## 3. Problémy a Riešenia
 
