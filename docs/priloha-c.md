@@ -108,13 +108,13 @@ We will use svgs in the project. Onboard svgr to the project to work with svg fi
 **Čo som musel upraviť / opraviť:**
 
 ```
-logo nebolo spravne importnute, trebalo importnut manualne
+logo a slnko neboli spravne importnute, trebalo importnut manualne
 ```
 
 **Poznámky / Learnings:**
 
 ```
-Fungoval fajn, vsetky assety az na logo importol z Figmy spravne. Poucenie - treba pre istotu vzdy skontrolovat vsetko co spravi.
+Fungoval fajn, vsetky assety az na logo a slnko importol z Figmy spravne. Poucenie - treba pre istotu vzdy skontrolovat vsetko co spravi.
 ```
 
 ### Prompt #4: **\*\***\*\*\*\***\*\***\_**\*\***\*\*\*\***\*\***
@@ -226,6 +226,33 @@ trebalo doplnit "use client", kedze pouziva interny state
 
 ```
 Doplnil som mu instrukcie do copilot-instruction ohladom pouzitia "use client" (update the copilot-instructions: mention that this is a next.js project, so all components that have internal state or use hooks need to be marked with "use client")
+```
+
+### Prompt #7: **\*\***\*\*\*\***\*\***\_**\*\***\*\*\*\***\*\***
+
+**Nástroj:** [ Copilot Agent Claude Opus 4.5 ]  
+**Kontext:** [ Zakladne komponenty ]
+
+**Prompt:**
+
+```
+Update the styling of SearchBar for the dark variant according to Figma: https://www.figma.com/design/CSKrPZ4ETBC5JY5zjRoTXn/github-user-search-app?node-id=5-587&m=dev Use #context7 for docs on tailwind dark mode. Use #figma
+[figma][context7]
+```
+
+**Výsledok:**  
+[x] ✅ Fungoval perfektne (first try)
+
+**Čo som musel upraviť / opraviť:**
+
+```
+nic
+```
+
+**Poznámky / Learnings:**
+
+```
+na moje prekvapenie velmi dobre implementoval aj dark/light mode toggle len s jednoduchym doplnkovym promptom (add a switch for dark mode, see this docs: https://ui.shadcn.com/docs/dark-mode/next)
 ```
 
 ## 3. Problémy a Riešenia

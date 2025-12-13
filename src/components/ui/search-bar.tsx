@@ -93,7 +93,8 @@ const SearchBar = React.forwardRef<HTMLInputElement, SearchBarProps>(
           // Shadow
           "shadow-lg",
           // Focus-within state - show ring when input is focused
-          "focus-within:ring-2 focus-within:ring-primary focus-within:ring-offset-2 focus-within:ring-offset-background",
+          // Dark mode uses light blue (blue-300) for better visibility
+          "focus-within:ring-2 focus-within:ring-primary dark:focus-within:ring-blue-300 focus-within:ring-offset-2 focus-within:ring-offset-background",
           // Transition
           "transition-shadow duration-200",
           // Disabled state
@@ -103,7 +104,7 @@ const SearchBar = React.forwardRef<HTMLInputElement, SearchBarProps>(
       >
         {/* Search Icon */}
         <SearchIcon
-          className="size-6 shrink-0 text-primary"
+          className="size-6 shrink-0 text-primary dark:text-blue-300"
           aria-hidden="true"
         />
 
@@ -124,14 +125,14 @@ const SearchBar = React.forwardRef<HTMLInputElement, SearchBarProps>(
               // Typography - Space Mono Regular 18px (text-preset-3)
               "font-mono text-preset-3",
               // Text colors based on state
-              // Placeholder: neutral-500
-              "placeholder:text-neutral-500",
-              // Value: neutral-700
-              "text-neutral-700 dark:text-neutral-100",
+              // Placeholder: neutral-500 (light), white with 70% opacity (dark)
+              "placeholder:text-neutral-500 dark:placeholder:text-white/70",
+              // Value: neutral-700 (light), white (dark)
+              "text-neutral-700 dark:text-white",
               // Sizing
               "flex-1 min-w-0 w-full",
-              // Caret color
-              "caret-primary"
+              // Caret color - light blue in dark mode
+              "caret-primary dark:caret-blue-300"
             )}
             aria-invalid={!!error}
             aria-describedby={error ? "search-error" : undefined}
