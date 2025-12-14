@@ -311,6 +311,34 @@ Chyba No results found! sprava
 Napriek tomu, ze niekolko veci nespravil ako mal, som velmi prijemne prekvapeny vysledkom - najma, ze som nemusel ist krok za krokom, ale Agent sam pekne odsledoval implementacny plan a usetril mi v tomto kroku 90% prace.
 ```
 
+### Prompt #11: **\*\***\*\*\*\***\*\***\_**\*\***\*\*\*\***\*\***
+
+**Nástroj:** [ Copilot Agent GPT-5.2]  
+**Kontext:** [ Fix Part 1: dark mode ]
+
+**Prompt:**
+
+```
+Some texts don't have correct color in dark mode - see the screenshot and compare to the desired dark mode design in Figma: https://www.figma.com/design/CSKrPZ4ETBC5JY5zjRoTXn/github-user-search-app?node-id=5-244&m=dev Use #context7 for docs on tailwind dark mode. Use #figma
+[figma][context7][screenshot]
+```
+
+**Výsledok:**  
+[x] ⭐⭐⭐⭐ Dobré, potreboval malé úpravy
+
+**Čo som musel upraviť / opraviť:**
+
+```
+trebalo este modre pismo pre user login upravit pre dark mode
+```
+
+**Poznámky / Learnings:**
+
+```
+Pravdepodobne keby som specifikoval vsetky miesta, kde treba upravit farbu, spravil by to lepsie. Ale bol som lenivy a dal som mu len screenshot a Figmu :)
+Tiez som chcel zistit ako to spravi GPT-5.2 - zda sa mi pomalsi ako Claude Opus 4.5 a horsie komentuje co robi.
+```
+
 ## 3. Problémy a Riešenia
 
 > 💡 **Tip:** Problémy sú cenné! Ukazujú ako riešiš problémy s AI.

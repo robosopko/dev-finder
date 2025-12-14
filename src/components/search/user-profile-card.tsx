@@ -35,14 +35,16 @@ const UserLinkItem = ({ icon, value, href, className }: UserLinkItemProps) => {
     <div
       className={cn(
         "flex items-center gap-200",
-        !isAvailable && "opacity-50",
+        !isAvailable && "opacity-70",
         className
       )}
     >
-      <span className="shrink-0 w-5 text-muted-foreground">{icon}</span>
+      <span className="shrink-0 w-5 text-muted-foreground dark:text-foreground">
+        {icon}
+      </span>
       <span
         className={cn(
-          "text-preset-6 text-muted-foreground truncate",
+          "text-preset-6 text-muted-foreground dark:text-foreground truncate",
           isAvailable && href && "hover:underline"
         )}
       >
@@ -82,15 +84,21 @@ const UserStats = ({
   return (
     <div className="flex items-center justify-between bg-background rounded-[10px] px-400 py-200 md:px-400">
       <div className="flex flex-col gap-050 flex-1 text-center md:text-left">
-        <span className="text-preset-7 text-muted-foreground">Repos</span>
+        <span className="text-preset-7 text-muted-foreground dark:text-foreground">
+          Repos
+        </span>
         <span className="text-preset-2 text-foreground">{repos}</span>
       </div>
       <div className="flex flex-col gap-050 flex-1 text-center md:text-left">
-        <span className="text-preset-7 text-muted-foreground">Followers</span>
+        <span className="text-preset-7 text-muted-foreground dark:text-foreground">
+          Followers
+        </span>
         <span className="text-preset-2 text-foreground">{followers}</span>
       </div>
       <div className="flex flex-col gap-050 flex-1 text-center md:text-left">
-        <span className="text-preset-7 text-muted-foreground">Following</span>
+        <span className="text-preset-7 text-muted-foreground dark:text-foreground">
+          Following
+        </span>
         <span className="text-preset-2 text-foreground">{following}</span>
       </div>
     </div>
@@ -133,8 +141,10 @@ export const UserProfileCard = ({ user, className }: UserProfileCardProps) => {
             <h1 className="text-preset-2 text-foreground truncate">
               {user.name || user.login}
             </h1>
-            <p className="text-preset-4 text-primary">@{user.login}</p>
-            <p className="text-preset-6 text-muted-foreground mt-100">
+            <p className="text-preset-4 text-primary dark:text-blue-300">
+              @{user.login}
+            </p>
+            <p className="text-preset-6 text-muted-foreground dark:text-foreground mt-100">
               {formatJoinDate(user.created_at)}
             </p>
           </div>
@@ -143,8 +153,8 @@ export const UserProfileCard = ({ user, className }: UserProfileCardProps) => {
         {/* Bio - Mobile */}
         <p
           className={cn(
-            "text-preset-6 text-muted-foreground mb-300",
-            !user.bio && "opacity-75"
+            "text-preset-6 text-muted-foreground dark:text-foreground dark:opacity-70 mb-300",
+            !user.bio && "opacity-75 dark:opacity-70"
           )}
         >
           {user.bio || "This profile has no bio"}
@@ -203,9 +213,11 @@ export const UserProfileCard = ({ user, className }: UserProfileCardProps) => {
               <h1 className="text-preset-1 text-foreground truncate">
                 {user.name || user.login}
               </h1>
-              <p className="text-preset-4 text-primary">@{user.login}</p>
+              <p className="text-preset-4 text-primary dark:text-blue-300">
+                @{user.login}
+              </p>
             </div>
-            <p className="text-preset-6 text-muted-foreground whitespace-nowrap">
+            <p className="text-preset-6 text-muted-foreground dark:text-foreground whitespace-nowrap">
               {formatJoinDate(user.created_at)}
             </p>
           </div>
@@ -213,8 +225,8 @@ export const UserProfileCard = ({ user, className }: UserProfileCardProps) => {
           {/* Bio */}
           <p
             className={cn(
-              "text-preset-6 text-muted-foreground",
-              !user.bio && "opacity-75"
+              "text-preset-6 text-muted-foreground dark:text-foreground dark:opacity-70",
+              !user.bio && "opacity-75 dark:opacity-70"
             )}
           >
             {user.bio || "This profile has no bio"}
