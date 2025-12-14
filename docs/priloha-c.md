@@ -339,6 +339,33 @@ Pravdepodobne keby som specifikoval vsetky miesta, kde treba upravit farbu, spra
 Tiez som chcel zistit ako to spravi GPT-5.2 - zda sa mi pomalsi ako Claude Opus 4.5 a horsie komentuje co robi.
 ```
 
+### Prompt #12: **\*\***\*\*\*\***\*\***\_**\*\***\*\*\*\***\*\***
+
+**Nástroj:** [ Copilot Agent Claude Sonnet 4.5]  
+**Kontext:** [ Fix Part 1: missing No results found message ]
+
+**Prompt:**
+
+```
+Implement the missing "No results found!" message according to Figma: https://www.figma.com/design/CSKrPZ4ETBC5JY5zjRoTXn/github-user-search-app?node-id=5-1522&m=dev Here is the dark mode version: https://www.figma.com/design/CSKrPZ4ETBC5JY5zjRoTXn/github-user-search-app?node-id=6-622&m=dev Use #context7 for docs on tailwind, use #figma
+[figma][context7]
+```
+
+**Výsledok:**  
+[x] ✅ Fungoval perfektne (first try)
+
+**Čo som musel upraviť / opraviť:**
+
+```
+nic
+```
+
+**Poznámky / Learnings:**
+
+```
+Claude Sonnet 4.5 postacuje na zmeny mensieho rozsahu a stoji menej ako Claude Opus 4.5
+```
+
 ## 3. Problémy a Riešenia
 
 > 💡 **Tip:** Problémy sú cenné! Ukazujú ako riešiš problémy s AI.

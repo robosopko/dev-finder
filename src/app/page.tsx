@@ -6,6 +6,7 @@ import { Header } from "@/components/layout/header";
 import { SearchForm } from "@/components/search/search-form";
 import {
   UserProfileCard,
+  UserProfileCardError,
   UserProfileCardSkeleton,
 } from "@/components/search/user-profile-card";
 import { useGitHubUser } from "@/hooks/use-github-user";
@@ -25,7 +26,7 @@ const Home = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <main className="mx-auto max-w-[730px] px-200 md:px-300 py-400 md:py-600">
+      <main className="mx-auto max-w-[800px] px-200 md:px-300 py-400 md:py-600">
         {/* Header */}
         <Header className="mb-400 md:mb-400" />
 
@@ -39,6 +40,8 @@ const Home = () => {
 
         {/* Results */}
         {(isLoading || isFetching) && <UserProfileCardSkeleton />}
+
+        {error && !isLoading && !isFetching && <UserProfileCardError />}
 
         {user && !isLoading && !isFetching && <UserProfileCard user={user} />}
       </main>
