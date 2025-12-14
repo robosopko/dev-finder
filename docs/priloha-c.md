@@ -419,6 +419,60 @@ nebol odstraneny duplicitny kod
 Refactor trebalo urobit pretoze agent podaval vsetky komponenty suvisiace s user profile do jedneho suboru, to spravil dobre, ale duplicitny kod zostal, dodatocny prompt s Claude Opus 4.5 to vyriesil (Try to refactor UserProfileCard more - there still is duplicate code for mobile and desktop layout, try to merge it into one structure and handle the different layout by tailwind styles. Here is Figma for desktop: https://www.figma.com/design/CSKrPZ4ETBC5JY5zjRoTXn/github-user-search-app?node-id=1-705&m=dev Here is Figma for mobile: https://www.figma.com/design/CSKrPZ4ETBC5JY5zjRoTXn/github-user-search-app?node-id=5-841&m=dev Use #context7 for docs, use #figma)
 ```
 
+### Prompt #15: **\*\***\*\*\*\***\*\***\_**\*\***\*\*\*\***\*\***
+
+**Nástroj:** [ Copilot Agent Claude Opus 4.5]  
+**Kontext:** [ Plan Part 2: GitHub OAuth Dashboard ]
+
+**Prompt:**
+
+```
+We are going to implement Part 2: GitHub OAuth Dashboard as described in TECH_STACK, the new OAuth App was created in GitHub and env variable are in .env.local file. Create a detailed implementation plan and write it into a new md file in docs folder. Do not implement anything yet, just prepare the detailed plan. Use #context7 to fetch docs.
+[context7][TECH_STACK.md]
+```
+
+**Výsledok:**  
+[x] ✅ Fungoval perfektne (first try)
+
+**Čo som musel upraviť / opraviť:**
+
+```
+nic
+```
+
+**Poznámky / Learnings:**
+
+```
+Plan vyzera dobre, uvidime ako do dopadne :)
+```
+
+### Prompt #16: **\*\***\*\*\*\***\*\***\_**\*\***\*\*\*\***\*\***
+
+**Nástroj:** [ Copilot Agent Claude Opus 4.5]  
+**Kontext:** [ Implement Part 2: GitHub OAuth Dashboard ]
+
+**Prompt:**
+
+```
+Implement GitHub OAuth Dashboard according to the implementation plan. Use shadcn-ui components and our tailwind theme styles. There is no Figma for this, but be consistent with the existing screens and components and implement the dark mode as well and everything should be responsive to look good on both desktop and mobile. Use #context7 for docs
+[context7][IMPLEMENTATION_PLAN_OAUTH_DASHBOARD.md]
+```
+
+**Výsledok:**  
+[x] ✅ Fungoval perfektne (first try)
+
+**Čo som musel upraviť / opraviť:**
+
+```
+nic
+```
+
+**Poznámky / Learnings:**
+
+```
+Na zaklade planu Claude Opus 4.5 za par minut implementoval co by som ja robil bez AI mozno 2 dni, vysledok je funkcny a napriek chybajucim Figma podkladom vyzera konzistentne so zvyskom aplikacie. Jediny zadrhel bol, ze agent implementoval podla next-auth v15 (beta) aj ked v projekte bola v14. To vsak bola moja chyba, kedze som v TECH_STACK omylom nechal zmienku o next-auth@beta. Tento problem vsak agent vyriesil sam (nainstaloval next-auth@beta).
+```
+
 ## 3. Problémy a Riešenia
 
 > 💡 **Tip:** Problémy sú cenné! Ukazujú ako riešiš problémy s AI.
