@@ -363,7 +363,34 @@ nic
 **Poznámky / Learnings:**
 
 ```
-Claude Sonnet 4.5 postacuje na zmeny mensieho rozsahu a stoji menej ako Claude Opus 4.5
+Claude Sonnet 4.5 postacuje na zmeny mensieho rozsahu a je lacnejsi ako Claude Opus 4.5 (1 premium request vs 3 premium requesty)
+```
+
+### Prompt #13: **\*\***\*\*\*\***\*\***\_**\*\***\*\*\*\***\*\***
+
+**Nástroj:** [ Copilot Agent Claude Sonnet 4.5]  
+**Kontext:** [ Fix Part 1: missing focus styling ]
+
+**Prompt:**
+
+```
+Some elements don't have proper focus styling according to Figma: https://www.figma.com/design/CSKrPZ4ETBC5JY5zjRoTXn/github-user-search-app?node-id=5-1338&m=dev Look at the dark / light switch and clickable elements. Use #figma
+[figma][context7]
+```
+
+**Výsledok:**  
+[x] ⭐⭐⭐⭐ Dobré, potreboval malé úpravy
+
+**Čo som musel upraviť / opraviť:**
+
+```
+doplnit focus styly do light/dark toggle
+```
+
+**Poznámky / Learnings:**
+
+```
+Pozor na nepouzity kod - agent upravil ModeToggle komponent, ten vsak uz nie je pouzivany, light/dark toggle je priamo v headeri, tam to agent neupravil.
 ```
 
 ## 3. Problémy a Riešenia

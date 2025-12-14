@@ -93,8 +93,8 @@ const SearchBar = React.forwardRef<HTMLInputElement, SearchBarProps>(
           // Shadow
           "shadow-lg",
           // Focus-within state - show ring when input is focused
-          // Dark mode uses light blue (blue-300) for better visibility
-          "focus-within:ring-2 focus-within:ring-primary dark:focus-within:ring-blue-300 focus-within:ring-offset-2 focus-within:ring-offset-background",
+          // 3px offset + 2px blue ring to match Figma design
+          "focus-within:ring-2 focus-within:ring-blue-500 focus-within:ring-offset-[3px] focus-within:ring-offset-background",
           // Transition
           "transition-shadow duration-200",
           // Disabled state

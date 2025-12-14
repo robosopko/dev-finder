@@ -32,7 +32,7 @@ export const Header = ({ className }: HeaderProps) => {
       {/* Theme Toggle */}
       <button
         onClick={toggleTheme}
-        className="flex items-center gap-200 group cursor-pointer"
+        className="flex items-center gap-200 group cursor-pointer rounded-[4px] focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-[3px] focus-visible:ring-offset-background"
         aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
       >
         <span className="text-preset-8 text-muted-foreground group-hover:text-foreground transition-colors">

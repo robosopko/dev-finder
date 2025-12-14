@@ -35,8 +35,7 @@ const SearchButton = React.forwardRef<HTMLButtonElement, SearchButtonProps>(
           "rounded-10",
           // Hover state - lighter blue
           "hover:bg-blue-300",
-          // Focus state - reset shadcn defaults and apply Figma design
-          // Blue ring around button with small offset
+          // Focus state - 2px white inner ring + 2px blue outer ring (Figma design)
           "focus:outline-none",
           "focus-visible:ring-2 focus-visible:ring-blue-500",
           "focus-visible:ring-offset-2 focus-visible:ring-offset-background",

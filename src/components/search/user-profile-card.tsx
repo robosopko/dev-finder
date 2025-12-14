@@ -59,7 +59,7 @@ const UserLinkItem = ({ icon, value, href, className }: UserLinkItemProps) => {
         href={ensureProtocol(href)}
         target="_blank"
         rel="noopener noreferrer"
-        className="block"
+        className="block rounded-[4px] focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-[3px] focus-visible:ring-offset-background"
       >
         {content}
       </a>
