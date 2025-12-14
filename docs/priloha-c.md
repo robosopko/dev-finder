@@ -393,6 +393,32 @@ doplnit focus styly do light/dark toggle
 Pozor na nepouzity kod - agent upravil ModeToggle komponent, ten vsak uz nie je pouzivany, light/dark toggle je priamo v headeri, tam to agent neupravil.
 ```
 
+### Prompt #14: **\*\***\*\*\*\***\*\***\_**\*\***\*\*\*\***\*\***
+
+**Nástroj:** [ Copilot Agent Claude Sonnet 4.5]  
+**Kontext:** [ Fix Part 1: refactor ]
+
+**Prompt:**
+
+```
+Refactor this file without changing functionality - keep the UserProfileCard here a move other component into separate files, remove duplicate code
+```
+
+**Výsledok:**  
+[x] ⭐⭐⭐ OK, potreboval viac úprav
+
+**Čo som musel upraviť / opraviť:**
+
+```
+nebol odstraneny duplicitny kod
+```
+
+**Poznámky / Learnings:**
+
+```
+Refactor trebalo urobit pretoze agent podaval vsetky komponenty suvisiace s user profile do jedneho suboru, to spravil dobre, ale duplicitny kod zostal, dodatocny prompt s Claude Opus 4.5 to vyriesil (Try to refactor UserProfileCard more - there still is duplicate code for mobile and desktop layout, try to merge it into one structure and handle the different layout by tailwind styles. Here is Figma for desktop: https://www.figma.com/design/CSKrPZ4ETBC5JY5zjRoTXn/github-user-search-app?node-id=1-705&m=dev Here is Figma for mobile: https://www.figma.com/design/CSKrPZ4ETBC5JY5zjRoTXn/github-user-search-app?node-id=5-841&m=dev Use #context7 for docs, use #figma)
+```
+
 ## 3. Problémy a Riešenia
 
 > 💡 **Tip:** Problémy sú cenné! Ukazujú ako riešiš problémy s AI.
