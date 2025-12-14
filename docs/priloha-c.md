@@ -228,7 +228,7 @@ trebalo doplnit "use client", kedze pouziva interny state
 Doplnil som mu instrukcie do copilot-instruction ohladom pouzitia "use client" (update the copilot-instructions: mention that this is a next.js project, so all components that have internal state or use hooks need to be marked with "use client")
 ```
 
-### Prompt #7: **\*\***\*\*\*\***\*\***\_**\*\***\*\*\*\***\*\***
+### Prompt #8: **\*\***\*\*\*\***\*\***\_**\*\***\*\*\*\***\*\***
 
 **Nástroj:** [ Copilot Agent Claude Opus 4.5 ]  
 **Kontext:** [ Zakladne komponenty ]
@@ -253,6 +253,62 @@ nic
 
 ```
 na moje prekvapenie velmi dobre implementoval aj dark/light mode toggle len s jednoduchym doplnkovym promptom (add a switch for dark mode, see this docs: https://ui.shadcn.com/docs/dark-mode/next)
+```
+
+### Prompt #9: **\*\***\*\*\*\***\*\***\_**\*\***\*\*\*\***\*\***
+
+**Nástroj:** [ Copilot Agent Claude Opus 4.5 ]  
+**Kontext:** [ Planovanie - Part 1: Public Search ]
+
+**Prompt:**
+
+```
+We are going implement Part 1: Public Search, as mentioned in TECH_STACK. Think hard and analyze all the requirements and create a detailed implementation plan and save it into a new md file in docs folder. We will later go through this plan and implement it step by step. To get the correct data structure, try to call https://api.github.com/users/{username} endpoint for some username, i.e. https://api.github.com/users/tailwindlabs and get the github fetch documentation from context7. Consider how the data will be fetched (with react-query) and accessed in components (through hooks) and how it will be displayed (use shadcn-ui components). Use the existing SearchBar component. Consider using the existing icons and avatar.png image (in case user has no image uploaded) in the assets folder. Don't implement anything yet, just create the detailed plan. Here is the Figma reference: https://www.figma.com/design/CSKrPZ4ETBC5JY5zjRoTXn/github-user-search-app?node-id=1-69&p=f&m=dev  Use #context7 , use #figma
+[figma][context7]
+```
+
+**Výsledok:**  
+[x] ✅ Fungoval perfektne (first try)
+
+**Čo som musel upraviť / opraviť:**
+
+```
+nic
+```
+
+**Poznámky / Learnings:**
+
+```
+Plan vyzera dobre, uvidime ako si s nim poradi, ci to zvladne naraz, alebo pojdeme postupne.
+```
+
+### Prompt #10: **\*\***\*\*\*\***\*\***\_**\*\***\*\*\*\***\*\***
+
+**Nástroj:** [ Copilot Agent Claude Opus 4.5 ]  
+**Kontext:** [ Implementacia - Part 1: Public Search ]
+
+**Prompt:**
+
+```
+Implement the docs/IMPLEMENTATION_PLAN_PUBLIC_SEARCH.md step by step, make sure to follow designs in Figma: https://www.figma.com/design/CSKrPZ4ETBC5JY5zjRoTXn/github-user-search-app?node-id=1-704&p=f&m=dev You may replace the content of Home page with the result. Use #context7 for docs, use #figma
+[figma][context7]
+```
+
+**Výsledok:**  
+[x] ⭐⭐⭐⭐ Dobré, potreboval malé úpravy
+
+**Čo som musel upraviť / opraviť:**
+
+```
+Bolo treba povolit url pre obrazky v next.config.js
+Dark mode nie je uplne podla dizajnu
+Chyba No results found! sprava
+```
+
+**Poznámky / Learnings:**
+
+```
+Napriek tomu, ze niekolko veci nespravil ako mal, som velmi prijemne prekvapeny vysledkom - najma, ze som nemusel ist krok za krokom, ale Agent sam pekne odsledoval implementacny plan a usetril mi v tomto kroku 90% prace.
 ```
 
 ## 3. Problémy a Riešenia

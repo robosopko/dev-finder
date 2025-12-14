@@ -1,6 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  images: {
+    domains: ["avatars.githubusercontent.com"],
+  },
   // Turbopack configuration for SVGR
   turbopack: {
     rules: {
