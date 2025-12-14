@@ -3,12 +3,12 @@
 import { useState } from "react";
 
 import { Header } from "@/components/layout/header";
-import { SearchForm } from "@/components/search/search-form";
 import {
   UserProfileCard,
   UserProfileCardError,
   UserProfileCardSkeleton,
-} from "@/components/search/user-profile-card";
+} from "@/components/search";
+import { SearchForm } from "@/components/search/search-form";
 import { useGitHubUser } from "@/hooks/use-github-user";
 
 const Home = () => {
