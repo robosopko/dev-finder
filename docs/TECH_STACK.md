@@ -13,7 +13,7 @@ A GitHub Dashboard application with two main features:
 
 | Technology     | Version | Purpose                                                |
 | -------------- | ------- | ------------------------------------------------------ |
-| **Next.js**    | 15.x    | React framework with App Router, static export support |
+| **Next.js**    | 16.x    | React framework with App Router, static export support |
 | **React**      | 19.x    | UI library                                             |
 | **TypeScript** | 5.x     | Type-safe JavaScript                                   |
 

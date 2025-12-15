@@ -1,36 +1,110 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# DevFinder Dashboard
+
+A GitHub Dashboard application with public user search and GitHub OAuth authentication.
+
+🔗 **Live Demo:** [https://dev-finder-tau.vercel.app](https://dev-finder-tau.vercel.app)
+
+## Features
+
+- **Public Search** - Search GitHub users by username and display their profile
+- **GitHub OAuth Login** - Authenticate with GitHub and access private dashboard
+- **Dashboard** - View your top repositories with stats
+- **Dark/Light Mode** - Toggle between themes
+
+## Tech Stack
+
+| Technology     | Version | Purpose                                 |
+| -------------- | ------- | --------------------------------------- |
+| Next.js        | 16.x    | React framework with App Router         |
+| React          | 19.x    | UI library                              |
+| TypeScript     | 5.x     | Type-safe JavaScript                    |
+| Tailwind CSS   | 4.x     | Utility-first CSS with custom theme     |
+| shadcn/ui      | latest  | Accessible, customizable UI components  |
+| TanStack Query | 5.x     | Server state management & data fetching |
+| NextAuth.js    | 5.x     | GitHub OAuth authentication             |
+| next-themes    | latest  | Dark/Light mode theming                 |
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18.x or later
+- npm, yarn, pnpm, or bun
+
+### 1. Install Dependencies
+
+```bash
+npm install
+```
+
+### 2. Configure Environment Variables
+
+Copy the example environment file and fill in your values:
+
+```bash
+cp .env.example .env.local
+```
+
+Edit `.env.local` with your credentials:
+
+```bash
+AUTH_SECRET="your-auth-secret"  # Generate with: npx auth secret
+
+# GitHub OAuth
+AUTH_GITHUB_ID="your-github-client-id"
+AUTH_GITHUB_SECRET="your-github-client-secret"
+```
+
+#### Setting Up GitHub OAuth App
+
+1. Go to [GitHub Developer Settings](https://github.com/settings/developers)
+2. Click **"New OAuth App"**
+3. Fill in:
+   - **Application name:** DevFinder Dashboard
+   - **Homepage URL:** `http://localhost:3000`
+   - **Authorization callback URL:** `http://localhost:3000/api/auth/callback/github`
+4. Copy **Client ID** and **Client Secret** to your `.env.local`
+
+### 3. Run Development Server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Available Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Command         | Description                             |
+| --------------- | --------------------------------------- |
+| `npm run dev`   | Start development server with Turbopack |
+| `npm run build` | Build for production                    |
+| `npm run start` | Start production server                 |
+| `npm run lint`  | Run ESLint                              |
+
+## Project Structure
+
+```
+src/
+├── app/                    # Next.js App Router pages
+├── assets/icons/           # SVG icons as React components
+├── components/
+│   ├── ui/                 # shadcn/ui base components
+│   ├── providers/          # React context providers
+│   ├── layout/             # Layout components
+│   ├── auth/               # Authentication components
+│   ├── search/             # Public search components
+│   └── dashboard/          # Dashboard components
+├── hooks/                  # Custom React hooks
+├── lib/                    # Utility functions
+└── types/                  # TypeScript type definitions
+```
 
 ## Learn More
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- [Next.js Documentation](https://nextjs.org/docs)
+- [shadcn/ui](https://ui.shadcn.com)
+- [TanStack Query](https://tanstack.com/query/latest)
+- [NextAuth.js](https://authjs.dev)
+- [Tailwind CSS](https://tailwindcss.com)
+- [GitHub REST API](https://docs.github.com/en/rest)

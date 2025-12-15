@@ -473,6 +473,33 @@ nic
 Na zaklade planu Claude Opus 4.5 za par minut implementoval co by som ja robil bez AI mozno 2 dni, vysledok je funkcny a napriek chybajucim Figma podkladom vyzera konzistentne so zvyskom aplikacie. Jediny zadrhel bol, ze agent implementoval podla next-auth v15 (beta) aj ked v projekte bola v14. To vsak bola moja chyba, kedze som v TECH_STACK omylom nechal zmienku o next-auth@beta. Tento problem vsak agent vyriesil sam (nainstaloval next-auth@beta).
 ```
 
+### Prompt #17: **\*\***\*\*\*\***\*\***\_**\*\***\*\*\*\***\*\***
+
+**Nástroj:** [ Copilot Agent Claude Opus 4.5]  
+**Kontext:** [ Uprava Readme ]
+
+**Prompt:**
+
+```
+Update the README to match the actual project setup for local development, according to TECH_STACK. Mention that dev needs to create .env.local file (copy from .env.example), also mention that working demo can be found here: https://dev-finder-tau.vercel.app
+[TECH_STACK.md]
+```
+
+**Výsledok:**  
+[x] ✅ Fungoval perfektne (first try)
+
+**Čo som musel upraviť / opraviť:**
+
+```
+AI spomenul next.js verziu 15 aj ked pouzivame 16.
+```
+
+**Poznámky / Learnings:**
+
+```
+Je velmi dolezite co je napisane v zakladnych docs ako TECH_STACK / copilot-instructions / AGENTS.md, podla toho agent funguje, napr. aj do readme nespravne napisal verziu Next.js podla toho ako to mal uvedene v TECH_STACK.md (15) namiesto spravnej aka je v package.json (16)
+```
+
 ## 3. Problémy a Riešenia
 
 > 💡 **Tip:** Problémy sú cenné! Ukazujú ako riešiš problémy s AI.
