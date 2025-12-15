@@ -7,6 +7,7 @@ Robert Sopko
 12.12.2025
 
 **Dátum dokončenia:**
+15.12.2025
 
 **Zadanie:** Frontend
 
@@ -18,12 +19,12 @@ Vyplň približný čas strávený s každým nástrojom:
 
 - [ ] **Cursor IDE:** **\_** hodín
 - [ ] **Claude Code:** **\_** hodín
-- [x] **GitHub Copilot:** **\_** hodín
-- [ ] **ChatGPT:** **\_** hodín
+- [x] **GitHub Copilot:** **5** hodín
+- [ ] **ChatGPT:** **0.5** hodín
 - [ ] **Claude.ai:** **\_** hodín
 - [ ] **Iné:**
 
-**Celkový čas vývoja (priližne):** **\_** hodín
+**Celkový čas vývoja (priližne):** **6** hodín
 
 ---
 
@@ -509,28 +510,35 @@ Je velmi dolezite co je napisane v zakladnych docs ako TECH_STACK / copilot-inst
 **Čo sa stalo:**
 
 ```
-[Detailný popis problému - čo nefungovalo? Aká bola chyba?]
+Pri Prompte #3 som požiadal agenta, aby stiahol logo a ikony z Figmy a nastavil svgr.
+Agent úspešne stiahol väčšinu ikon, ale logo a ikona slnka neboli správne importnuté -
+musel som ich stiahnuť a pridať manuálne.
 ```
 
 **Prečo to vzniklo:**
 
 ```
-[Tvoja analýza - prečo AI toto vygeneroval? Čo bolo v prompte zlé?]
+Figma MCP má občas problémy so sťahovaním niektorých typov assetov,
+pravdepodobne kvôli spôsobu akým sú v Figme organizované alebo pomenované.
+Agent nedokázal detekovať, že tieto dva assety chýbajú.
 ```
 
 **Ako som to vyriešil:**
 
 ```
-[Krok za krokom - čo si urobil? Upravil prompt? Prepísal kód? Použil iný nástroj?]
+1. Skontroloval som vygenerovaný assets/icons folder
+2. Identifikoval som chýbajúce assety porovnaním s Figmou
+3. Manuálne stiahol logo.svg a sun.svg z Figmy
+4. Pridal ich do správneho priečinka a aktualizoval index.ts
 ```
 
 **Čo som sa naučil:**
 
 ```
-[Konkrétny learning pre budúcnosť - čo budeš robiť inak?]
+Po každom automatickom importe assetov z Figmy treba manuálne
+skontrolovať či boli všetky assety správne stiahnuté a importované.
+Nikdy neveriť naslepo, že AI urobila všetko správne.
 ```
-
-**Screenshot / Kód:** [ ] Priložený
 
 ---
 
@@ -539,25 +547,72 @@ Je velmi dolezite co je napisane v zakladnych docs ako TECH_STACK / copilot-inst
 **Čo sa stalo:**
 
 ```
-
+Pri Prompte #13 som požiadal agenta, aby opravil focus styling pre dark/light switch.
+Agent úspešne opravil styling v ModeToggle komponente, avšak tento komponent
+už nebol v aplikácii používaný - skutočný toggle bol priamo v Header komponente,
+kde styling ostal nezmenený.
 ```
 
 **Prečo:**
 
 ```
-
+V projekte existoval starý, nepoužívaný ModeToggle komponent, ktorý agent našiel
+pri vyhľadávaní. Agent neoverił, či je tento komponent skutočne používaný v aplikácii.
+Chýbalo mu pochopenie kontextu toho, ktorý kód je aktívny a ktorý nie.
 ```
 
 **Riešenie:**
 
 ```
-
+1. Testovaním som zistil, že zmeny sa neprejavili
+2. Vymazal som nepoužívaný ModeToggle komponent aby sa to neopakovalo
 ```
 
 **Learning:**
 
 ```
+Po refaktoringu vždy vymazať nepoužívaný kód aby nezmiatol AI.
+Pri zadávaní promptu konkrétne špecifikovať súbor/komponent ak je to možné.
+Vždy testovať výsledok v prehliadači, nie len kód reviewovať.
+```
 
+---
+
+### Problém #3: **\*\***\*\*\*\***\*\***\_**\*\***\*\*\*\***\*\***
+
+**Čo sa stalo:**
+
+```
+Pri Prompte #16 agent implementoval OAuth dashboard používajúc next-auth@beta (v15),
+aj keď v projekte bola stabilná verzia (v14).
+Pri Prompte #17 agent spomenul v README Next.js verziu 15 namiesto správnej verzie 16.
+```
+
+**Prečo:**
+
+```
+V TECH_STACK.md dokumentácii som omylom nechal zmienku o "next-auth@beta".
+AI sa riadi primárne podľa dokumentácie, ktorú dostane v kontexte - ak je tam
+zastaraná alebo nesprávna informácia, agent ju použije namiesto toho,
+čo je skutočne v package.json.
+```
+
+**Riešenie:**
+
+```
+1. Agent sám rozpoznal konfklikt a nainstaloval next-auth@beta
+2. Všimol som si problém a aktualizoval TECH_STACK.md na správne verzie
+3. Pri README chybe som dodatočne agentovi dal správnu verziu
+4. Naučil som sa kontrolovať všetky "source of truth" dokumenty pred použitím
+```
+
+**Learning:**
+
+```
+Dokumentácia ako TECH_STACK, copilot-instructions, README sú "single source of truth"
+pre AI - ak tam je chyba, AI ju zopakuje vo všetkých implementáciách.
+Je kriticky dôležité udržiavať tieto dokumenty aktuálne a presné.
+Pri začiatku projektu overiť všetky verzie v package.json a zosynchronizovať s docs.
 ```
 
 ## 4. Kľúčové Poznatky
@@ -567,19 +622,19 @@ Je velmi dolezite co je napisane v zakladnych docs ako TECH_STACK / copilot-inst
 **1.**
 
 ```
-[Príklad: Claude Code pre OAuth - fungoval first try, zero problémov]
+Vytvorenie planu implementacie a nasledna implementacia podla planu s Claude Opus 4.5
 ```
 
 **2.**
 
 ```
-
+Claude Opus 4.5 and Sonnet 4.5 Agent vyborne pouzival context7 na dotiahnutie najnovsej dokumentacie
 ```
 
 **3.**
 
 ```
-
+Claude Opus 4.5 velmi dobre pracoval s Figmou, pocas celeho vyvoja som manualne nemusel takmer nic menit
 ```
 
 **[ Pridaj viac ak chceš ]**
@@ -591,19 +646,19 @@ Je velmi dolezite co je napisane v zakladnych docs ako TECH_STACK / copilot-inst
 **1.**
 
 ```
-[Príklad: Figma MCP spacing - často o 4-8px vedľa, musel som manuálne opravovať]
+Na moje prekvapenie zle importol niektore svg assety z Figmy (slnko, link, logo), bolo treba skontrolovat a importnut manualne
 ```
 
 **2.**
 
 ```
-
+Pri mnozstve kodu, ktoru vygenerovalo AI bolo narocne robit code review - vynegerovany kod nebol vzdy optimalny (duplicitny kod, zle rozdelenie do suborov), AI niekedy zabuda zmazat uz nepouzivany kod, co sposobuje problemy neskor
 ```
 
 **3.**
 
 ```
-
+Udrziavat dokumenty, ktore AI povazuje za svoj zdroj pravdy, aby boli aktualne - AI mi do hlavy nevidi a riadi sa nie tym co chcem, ale tym co ma napisane
 ```
 
 ---
@@ -613,31 +668,31 @@ Je velmi dolezite co je napisane v zakladnych docs ako TECH_STACK / copilot-inst
 **1.**
 
 ```
-[Príklad: Vždy špecifikuj verziu knižnice v prompte - "NextAuth.js v5"]
+Nepustit sa hned do pisania promptu, ale vytvorit si vzdy najprv implementacny plan pre danu feature
 ```
 
 **2.**
 
 ```
-
+Velku pozornost venovat zakladnym dokumentom, ktore davaju AI kontext, ako tech stack, copilot instructions, agent.md ... Treba ich po vygenerovani poriadne zrevidovat (pozor aj na cisla verzii kniznic) a udrziavat aktualne.
 ```
 
 **3.**
 
 ```
-
+Pouzit Claude Opus 4.5 na vytvorenie planu implementacia a realizaciu komplikovanejsieho planu. Pouzit Claude Sonnet 4.5 na jednoduchsie zmeny (refactoring / upravy vramci jedneho suboru).
 ```
 
 **4.**
 
 ```
-
+Vzdy dat pristup agentovi ku aktualnej dokumentacii cez context7 (az na trivialne zmeny) a zaroven spomenut kniznice, ktore v danej ulohe bude potrebovat (react-query, next-auth, tailwind ...) Verzie vsetkych dolezitych kniznic v projekte maju byt uvedene v dokumente, ktory je vzdy v kontexte (copilot-instructions alebo agents.md)
 ```
 
 **5.**
 
 ```
-
+Neuspokojit za, ze vygenerovany kod funguje, spravit poriadne code review, zrefaktorovat co sa da.
 ```
 
 ---
@@ -647,19 +702,19 @@ Je velmi dolezite co je napisane v zakladnych docs ako TECH_STACK / copilot-inst
 **Tip #1:**
 
 ```
-[Konkrétny, actionable tip]
+Pouzivaj context7 MCP tool pre dokumentaciu a Figma MCP tool pre napojenie na Figmu. S tymito dvoma si vacsinou vystacis (prilis vela toolov zahlcuje kontext).
 ```
 
 **Tip #2:**
 
 ```
-
+Pre ficury si najprv vygeneruj implementacny plan, ktory az po zrevivani a pripadnej uprave nechaj AI implementovat. Pre planovanie pouzi silnejsi (a drahsi) model ako napr. Claude Opus 4.5, pre implementaciu mensich veci staci lacnejsi, napr. Claude Sonnet 4.5
 ```
 
 **Tip #3:**
 
 ```
-
+Vytvor si dobry tech stack dokument so zakladnymi instrukciami pre AI agenta, ktory ma vzdy v kontexte. Tento dokument udrziavaj, nech je vzdy aktualny.
 ```
 
 ---
@@ -668,20 +723,20 @@ Je velmi dolezite co je napisane v zakladnych docs ako TECH_STACK / copilot-inst
 
 ### 6.1 Efektivita AI nástrojov
 
-**Ktorý nástroj bol najužitočnejší?** **\*\***\*\*\*\***\*\***\_**\*\***\*\*\*\***\*\***
+**Ktorý nástroj bol najužitočnejší?** **\*\***\*\*\*\***\*\***Claude Opus 4.5 (copilot agent)**\*\***\*\*\*\***\*\***
 
 **Prečo?**
 
 ```
-
+Vie vyborne pracovat s toolmi pre dokumentaciu a Figmu, dokaze vytvorit podrobny plan implementacie a nasledne cely plan krok za krokom aj implementovat. Velmi dobre komentuje co robi, co developerovi pomaha lepsie rozumiet vygenerovanemu kodu a celemu projektu. Tento model je tiez dostatocne rychly a stabilny.
 ```
 
-**Ktorý nástroj bol najmenej užitočný?** **\*\***\*\*\*\***\*\***\_**\*\***\*\*\*\***\*\***
+**Ktorý nástroj bol najmenej užitočný?** **\*\***\*\*\*\***\*\***GPT-5.2**\*\***\*\*\*\***\*\***
 
 **Prečo?**
 
 ```
-
+Je pomalsi ako Claude Opus 4.5 a nekomentuje poriadne co robi - developer musi stravit viac casu pri code review
 ```
 
 ---
@@ -689,7 +744,7 @@ Je velmi dolezite co je napisane v zakladnych docs ako TECH_STACK / copilot-inst
 ### 6.2 Najväčšie prekvapenie
 
 ```
-[Čo ťa najviac prekvapilo pri práci s AI?]
+Claude Opus 4.5 dokazal celu GitHub OAuth Dashboard feature naprogramovat sam s pomocou dvoch promptov (jeden na naplanovanie a druhy na implementaciu) za cca 10 minut, teda menej ako mi trvalo napisanie tych promptov :)
 ```
 
 ---
@@ -697,7 +752,7 @@ Je velmi dolezite co je napisane v zakladnych docs ako TECH_STACK / copilot-inst
 ### 6.3 Najväčšia frustrácia
 
 ```
-[Čo bolo najfrustrujúcejšie?]
+Zistenie, ze svg assety, ktore AI importla z Figmy su niektore zle a teda ze musim vsetky skontrolovat a importnut este raz manualne.
 ```
 
 ---
@@ -705,7 +760,7 @@ Je velmi dolezite co je napisane v zakladnych docs ako TECH_STACK / copilot-inst
 ### 6.4 Najväčší "AHA!" moment
 
 ```
-[Kedy ti došlo niečo dôležité o AI alebo o developmente?]
+Ked som zabudol updatnut tech stack dokument a potom sa cudoval, preco AI chce pouzit inu verziu next-auth ako je v projekte nainstalovana
 ```
 
 ---
@@ -713,11 +768,11 @@ Je velmi dolezite co je napisane v zakladnych docs ako TECH_STACK / copilot-inst
 ### 6.5 Čo by som urobil inak
 
 ```
-[Keby si začínal znova, čo by si zmenil?]
+Vacsiu pozornost dal vygenerovanym source-of-truth kontextovym dokumentom, aby boli tip-top. Nasledne aj prvu feature by som skusil nechat AI agenta implementovat celu v dvoch krokoch - planovanie -> implementacia. Tam som viac casu stravil pripravou jednotlivych komponentov v samostatnych promptoch, co zabralo viac casu.
 ```
 
 ### 6.6 Hlavný odkaz pre ostatných
 
 ```
-[Keby si mal povedať jednu vec kolegom o AI development, čo by to bylo?]
+With great power comes great responsibility. AI ti usetri mnozstvo casu, ak nebudes lenivy nastavit kontext, pisat dobre prompty a rozumiet co od AI chces aj vsetkemu co vygeneruje. Naopak, v rukach leniveho programatora je AI uzasnym nastrojom skazy na rychle generovanie mnozstva nekvalitneho kodu, ktorym bude frustrovat svojich kolegov.
 ```
