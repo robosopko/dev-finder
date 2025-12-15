@@ -53,15 +53,15 @@ We are going to build a GitHub Dashboard app according to the md document. We wa
 npm install next-auth@beta
 som zmenil na
 npm install next-auth
-pretoze som chcel stabilnu verziu a nie beta
+pretože som chcel stabilnú verziu a nie beta
 
-instrukcie k static export som odignoroval, kedze som si uvedomil ze napojenie na GitHub OAuth nebude fungovat s cisto staticky generovanou strankou
+inštrukcie k static export som odignoroval, keďže som si uvedomil že napojenie na GitHub OAuth nebude fungovať s čisto staticky generovanou stránkou
 ```
 
 **Poznámky / Learnings:**
 
 ```
-Fungoval dobre, lebo som specifikoval technologie, ktore chcem pouzit, dal som mu ako kontext zadanie a pristup k aktualnej dokumentacii cez context7
+Fungoval dobre, lebo som špecifikoval technológie, ktoré chcem použiť, dal som mu ako kontext zadanie a prístup k aktuálnej dokumentácii cez context7
 ```
 
 ### Prompt #2: **\*\***\*\*\*\***\*\***\_**\*\***\*\*\*\***\*\***
@@ -88,7 +88,7 @@ nic
 **Poznámky / Learnings:**
 
 ```
-Fungoval dobre, lebo mu dal MCP pristup k Figme aj ku context7, aby mal k dispozicii najnovsiu tailwind dokumentaciu
+Fungoval dobre, lebo mu dal MCP prístup k Figme aj ku context7, aby mal k dispozícii najnovšiu tailwind dokumentáciu
 ```
 
 ### Prompt #3: **\*\***\*\*\*\***\*\***\_**\*\***\*\*\*\***\*\***
@@ -109,13 +109,13 @@ We will use svgs in the project. Onboard svgr to the project to work with svg fi
 **Čo som musel upraviť / opraviť:**
 
 ```
-logo a slnko neboli spravne importnute, trebalo importnut manualne
+logo a slnko neboli správne importnuté, trebalo importnúť manuálne
 ```
 
 **Poznámky / Learnings:**
 
 ```
-Fungoval fajn, vsetky assety az na logo a slnko importol z Figmy spravne. Poucenie - treba pre istotu vzdy skontrolovat vsetko co spravi.
+Fungoval fajn, všetky assety až na logo a slnko importol z Figmy správne. Poučenie - treba pre istotu vždy skontrolovať všetko čo spraví.
 ```
 
 ### Prompt #4: **\*\***\*\*\*\***\*\***\_**\*\***\*\*\*\***\*\***
@@ -136,13 +136,13 @@ Implement the Search button inside components folder according to Figma: https:/
 **Čo som musel upraviť / opraviť:**
 
 ```
-Focus state nebol spravne implementovany, vyriesene dodatocnym promtom
+Focus state nebol správne implementovaný, vyriešené dodatočným promptom
 ```
 
 **Poznámky / Learnings:**
 
 ```
-Zlozitejsie stylovanie nie vzdy zvladne na 1x
+Zložitejšie štýlovanie nie vždy zvládne na 1x
 ```
 
 ### Prompt #5: **\*\***\*\*\*\***\*\***\_**\*\***\*\*\*\***\*\***
@@ -169,7 +169,7 @@ nic
 **Poznámky / Learnings:**
 
 ```
-Pri detailnom zamerani na problem a dostatocnom kontexte ho zvacsa vie AI vyriesit
+Pri detailnom zameraní na problém a dostatočnom kontexte ho zväčša vie AI vyriešiť
 ```
 
 ### Prompt #6: **\*\***\*\*\*\***\*\***\_**\*\***\*\*\*\***\*\***
@@ -199,7 +199,7 @@ nic
 **Poznámky / Learnings:**
 
 ```
-Vygeneroval fajn copilot-instructions subor kde bolo vsetko co som chcel, pomohli mu najma uz predtym vytvorene tech stack dokumenty, ktore dostal v kontexte.
+Vygeneroval fajn copilot-instructions súbor kde bolo všetko čo som chcel, pomohli mu najmä už predtým vytvorené tech stack dokumenty, ktoré dostal v kontexte.
 ```
 
 ### Prompt #7: **\*\***\*\*\*\***\*\***\_**\*\***\*\*\*\***\*\***
@@ -220,13 +220,13 @@ Create a SearchBar component based on Figma: https://www.figma.com/design/CSKrPZ
 **Čo som musel upraviť / opraviť:**
 
 ```
-trebalo doplnit "use client", kedze pouziva interny state
+trebalo doplniť "use client", keďže používa interný state
 ```
 
 **Poznámky / Learnings:**
 
 ```
-Doplnil som mu instrukcie do copilot-instruction ohladom pouzitia "use client" (update the copilot-instructions: mention that this is a next.js project, so all components that have internal state or use hooks need to be marked with "use client")
+Doplnil som mu inštrukcie do copilot-instruction ohľadom použitia "use client" (update the copilot-instructions: mention that this is a next.js project, so all components that have internal state or use hooks need to be marked with "use client")
 ```
 
 ### Prompt #8: **\*\***\*\*\*\***\*\***\_**\*\***\*\*\*\***\*\***
@@ -253,7 +253,7 @@ nic
 **Poznámky / Learnings:**
 
 ```
-na moje prekvapenie velmi dobre implementoval aj dark/light mode toggle len s jednoduchym doplnkovym promptom (add a switch for dark mode, see this docs: https://ui.shadcn.com/docs/dark-mode/next)
+na moje prekvapenie veľmi dobre implementoval aj dark/light mode toggle len s jednoduchým doplnkovým promptom (add a switch for dark mode, see this docs: https://ui.shadcn.com/docs/dark-mode/next)
 ```
 
 ### Prompt #9: **\*\***\*\*\*\***\*\***\_**\*\***\*\*\*\***\*\***
@@ -280,7 +280,7 @@ nic
 **Poznámky / Learnings:**
 
 ```
-Plan vyzera dobre, uvidime ako si s nim poradi, ci to zvladne naraz, alebo pojdeme postupne.
+Plán vyzerá dobre, uvidíme ako si s ním poradí, či to zvládne naraz, alebo pôjdeme postupne.
 ```
 
 ### Prompt #10: **\*\***\*\*\*\***\*\***\_**\*\***\*\*\*\***\*\***
@@ -301,15 +301,15 @@ Implement the docs/IMPLEMENTATION_PLAN_PUBLIC_SEARCH.md step by step, make sure 
 **Čo som musel upraviť / opraviť:**
 
 ```
-Bolo treba povolit url pre obrazky v next.config.js
-Dark mode nie je uplne podla dizajnu
-Chyba No results found! sprava
+Bolo treba povoliť url pre obrázky v next.config.js
+Dark mode nie je úplne podľa dizajnu
+Chýba No results found! správa
 ```
 
 **Poznámky / Learnings:**
 
 ```
-Napriek tomu, ze niekolko veci nespravil ako mal, som velmi prijemne prekvapeny vysledkom - najma, ze som nemusel ist krok za krokom, ale Agent sam pekne odsledoval implementacny plan a usetril mi v tomto kroku 90% prace.
+Napriek tomu, že niekoľko vecí nespravil ako mal, som veľmi príjemne prekvapený výsledkom - najmä, že som nemusel ísť krok za krokom, ale Agent sám pekne odsledoval implementačný plán a ušetril mi v tomto kroku 90% práce.
 ```
 
 ### Prompt #11: **\*\***\*\*\*\***\*\***\_**\*\***\*\*\*\***\*\***
@@ -330,14 +330,14 @@ Some texts don't have correct color in dark mode - see the screenshot and compar
 **Čo som musel upraviť / opraviť:**
 
 ```
-trebalo este modre pismo pre user login upravit pre dark mode
+trebalo ešte modré písmo pre user login upraviť pre dark mode
 ```
 
 **Poznámky / Learnings:**
 
 ```
-Pravdepodobne keby som specifikoval vsetky miesta, kde treba upravit farbu, spravil by to lepsie. Ale bol som lenivy a dal som mu len screenshot a Figmu :)
-Tiez som chcel zistit ako to spravi GPT-5.2 - zda sa mi pomalsi ako Claude Opus 4.5 a horsie komentuje co robi.
+Pravdepodobne keby som špecifikoval všetky miesta, kde treba upraviť farbu, spravil by to lepšie. Ale bol som lenivý a dal som mu len screenshot a Figmu :)
+Tiež som chcel zistiť ako to spraví GPT-5.2 - zdá sa mi pomalší ako Claude Opus 4.5 a horšie komentuje čo robí.
 ```
 
 ### Prompt #12: **\*\***\*\*\*\***\*\***\_**\*\***\*\*\*\***\*\***
@@ -364,7 +364,7 @@ nic
 **Poznámky / Learnings:**
 
 ```
-Claude Sonnet 4.5 postacuje na zmeny mensieho rozsahu a je lacnejsi ako Claude Opus 4.5 (1 premium request vs 3 premium requesty)
+Claude Sonnet 4.5 postačuje na zmeny menšieho rozsahu a je lacnejší ako Claude Opus 4.5 (1 premium request vs 3 premium requesty)
 ```
 
 ### Prompt #13: **\*\***\*\*\*\***\*\***\_**\*\***\*\*\*\***\*\***
@@ -385,13 +385,13 @@ Some elements don't have proper focus styling according to Figma: https://www.fi
 **Čo som musel upraviť / opraviť:**
 
 ```
-doplnit focus styly do light/dark toggle
+doplniť focus štýly do light/dark toggle
 ```
 
 **Poznámky / Learnings:**
 
 ```
-Pozor na nepouzity kod - agent upravil ModeToggle komponent, ten vsak uz nie je pouzivany, light/dark toggle je priamo v headeri, tam to agent neupravil.
+Pozor na nepoužitý kód - agent upravil ModeToggle komponent, ten však už nie je používaný, light/dark toggle je priamo v headeri, tam to agent neupravil.
 ```
 
 ### Prompt #14: **\*\***\*\*\*\***\*\***\_**\*\***\*\*\*\***\*\***
@@ -411,13 +411,13 @@ Refactor this file without changing functionality - keep the UserProfileCard her
 **Čo som musel upraviť / opraviť:**
 
 ```
-nebol odstraneny duplicitny kod
+nebol odstránený duplicitný kód
 ```
 
 **Poznámky / Learnings:**
 
 ```
-Refactor trebalo urobit pretoze agent podaval vsetky komponenty suvisiace s user profile do jedneho suboru, to spravil dobre, ale duplicitny kod zostal, dodatocny prompt s Claude Opus 4.5 to vyriesil (Try to refactor UserProfileCard more - there still is duplicate code for mobile and desktop layout, try to merge it into one structure and handle the different layout by tailwind styles. Here is Figma for desktop: https://www.figma.com/design/CSKrPZ4ETBC5JY5zjRoTXn/github-user-search-app?node-id=1-705&m=dev Here is Figma for mobile: https://www.figma.com/design/CSKrPZ4ETBC5JY5zjRoTXn/github-user-search-app?node-id=5-841&m=dev Use #context7 for docs, use #figma)
+Refactor trebalo urobiť pretože agent podával všetky komponenty súvisiace s user profile do jedného súboru, to spravil dobre, ale duplicitný kód zostal, dodatočný prompt s Claude Opus 4.5 to vyriešil (Try to refactor UserProfileCard more - there still is duplicate code for mobile and desktop layout, try to merge it into one structure and handle the different layout by tailwind styles. Here is Figma for desktop: https://www.figma.com/design/CSKrPZ4ETBC5JY5zjRoTXn/github-user-search-app?node-id=1-705&m=dev Here is Figma for mobile: https://www.figma.com/design/CSKrPZ4ETBC5JY5zjRoTXn/github-user-search-app?node-id=5-841&m=dev Use #context7 for docs, use #figma)
 ```
 
 ### Prompt #15: **\*\***\*\*\*\***\*\***\_**\*\***\*\*\*\***\*\***
@@ -444,7 +444,7 @@ nic
 **Poznámky / Learnings:**
 
 ```
-Plan vyzera dobre, uvidime ako do dopadne :)
+Plán vyzerá dobre, uvidíme ako to dopadne :)
 ```
 
 ### Prompt #16: **\*\***\*\*\*\***\*\***\_**\*\***\*\*\*\***\*\***
@@ -471,7 +471,7 @@ nic
 **Poznámky / Learnings:**
 
 ```
-Na zaklade planu Claude Opus 4.5 za par minut implementoval co by som ja robil bez AI mozno 2 dni, vysledok je funkcny a napriek chybajucim Figma podkladom vyzera konzistentne so zvyskom aplikacie. Jediny zadrhel bol, ze agent implementoval podla next-auth v15 (beta) aj ked v projekte bola v14. To vsak bola moja chyba, kedze som v TECH_STACK omylom nechal zmienku o next-auth@beta. Tento problem vsak agent vyriesil sam (nainstaloval next-auth@beta).
+Na základe plánu Claude Opus 4.5 za pár minút implementoval čo by som ja robil bez AI možno 2 dni, výsledok je funkčný a napriek chýbajúcim Figma podkladom vyzerá konzistentne so zvyškom aplikácie. Jediný zádrhel bol, že agent implementoval podľa next-auth v15 (beta) aj keď v projekte bola v14. To však bola moja chyba, keďže som v TECH_STACK omylom nechal zmienku o next-auth@beta. Tento problém však agent vyriešil sám (nainštaloval next-auth@beta).
 ```
 
 ### Prompt #17: **\*\***\*\*\*\***\*\***\_**\*\***\*\*\*\***\*\***
@@ -492,13 +492,13 @@ Update the README to match the actual project setup for local development, accor
 **Čo som musel upraviť / opraviť:**
 
 ```
-AI spomenul next.js verziu 15 aj ked pouzivame 16.
+AI spomenul next.js verziu 15 aj keď používame 16.
 ```
 
 **Poznámky / Learnings:**
 
 ```
-Je velmi dolezite co je napisane v zakladnych docs ako TECH_STACK / copilot-instructions / AGENTS.md, podla toho agent funguje, napr. aj do readme nespravne napisal verziu Next.js podla toho ako to mal uvedene v TECH_STACK.md (15) namiesto spravnej aka je v package.json (16)
+Je veľmi dôležité čo je napísané v základných docs ako TECH_STACK / copilot-instructions / AGENTS.md, podľa toho agent funguje, napr. aj do readme nesprávne napísal verziu Next.js podľa toho ako to mal uvedené v TECH_STACK.md (15) namiesto správnej aká je v package.json (16)
 ```
 
 ## 3. Problémy a Riešenia
@@ -557,7 +557,7 @@ kde styling ostal nezmenený.
 
 ```
 V projekte existoval starý, nepoužívaný ModeToggle komponent, ktorý agent našiel
-pri vyhľadávaní. Agent neoverił, či je tento komponent skutočne používaný v aplikácii.
+pri vyhľadávaní. Agent neoveril, či je tento komponent skutočne používaný v aplikácii.
 Chýbalo mu pochopenie kontextu toho, ktorý kód je aktívny a ktorý nie.
 ```
 
@@ -600,7 +600,7 @@ zastaraná alebo nesprávna informácia, agent ju použije namiesto toho,
 **Riešenie:**
 
 ```
-1. Agent sám rozpoznal konfklikt a nainstaloval next-auth@beta
+1. Agent sám rozpoznal konflikt a nainštaloval next-auth@beta
 2. Všimol som si problém a aktualizoval TECH_STACK.md na správne verzie
 3. Pri README chybe som dodatočne agentovi dal správnu verziu
 4. Naučil som sa kontrolovať všetky "source of truth" dokumenty pred použitím
@@ -622,19 +622,19 @@ Pri začiatku projektu overiť všetky verzie v package.json a zosynchronizovať
 **1.**
 
 ```
-Vytvorenie planu implementacie a nasledna implementacia podla planu s Claude Opus 4.5
+Vytvorenie plánu implementácie a následná implementácia podľa plánu s Claude Opus 4.5
 ```
 
 **2.**
 
 ```
-Claude Opus 4.5 and Sonnet 4.5 Agent vyborne pouzival context7 na dotiahnutie najnovsej dokumentacie
+Claude Opus 4.5 and Sonnet 4.5 Agent výborne používal context7 na dotiahnutie najnovšej dokumentácie
 ```
 
 **3.**
 
 ```
-Claude Opus 4.5 velmi dobre pracoval s Figmou, pocas celeho vyvoja som manualne nemusel takmer nic menit
+Claude Opus 4.5 veľmi dobre pracoval s Figmou, počas celého vývoja som manuálne nemusel takmer nič meniť
 ```
 
 **[ Pridaj viac ak chceš ]**
@@ -646,19 +646,19 @@ Claude Opus 4.5 velmi dobre pracoval s Figmou, pocas celeho vyvoja som manualne 
 **1.**
 
 ```
-Na moje prekvapenie zle importol niektore svg assety z Figmy (slnko, link, logo), bolo treba skontrolovat a importnut manualne
+Na moje prekvapenie zle importol niektoré svg assety z Figmy (slnko, link, logo), bolo treba skontrolovať a importnúť manuálne
 ```
 
 **2.**
 
 ```
-Pri mnozstve kodu, ktoru vygenerovalo AI bolo narocne robit code review - vynegerovany kod nebol vzdy optimalny (duplicitny kod, zle rozdelenie do suborov), AI niekedy zabuda zmazat uz nepouzivany kod, co sposobuje problemy neskor
+Pri množstve kódu, ktorú vygenerovalo AI bolo náročné robiť code review - vygenerovaný kód nebol vždy optimálny (duplicitný kód, zle rozdelenie do súborov), AI niekedy zabúda zmazať už nepoužívaný kód, čo spôsobuje problémy neskôr
 ```
 
 **3.**
 
 ```
-Udrziavat dokumenty, ktore AI povazuje za svoj zdroj pravdy, aby boli aktualne - AI mi do hlavy nevidi a riadi sa nie tym co chcem, ale tym co ma napisane
+Udržiavať dokumenty, ktoré AI považuje za svoj zdroj pravdy, aby boli aktuálne - AI mi do hlavy nevidí a riadi sa nie tým čo chcem, ale tým čo má napísané
 ```
 
 ---
@@ -668,31 +668,31 @@ Udrziavat dokumenty, ktore AI povazuje za svoj zdroj pravdy, aby boli aktualne -
 **1.**
 
 ```
-Nepustit sa hned do pisania promptu, ale vytvorit si vzdy najprv implementacny plan pre danu feature
+Nepustiť sa hneď do písania promptu, ale vytvoriť si vždy najprv implementačný plán pre danú feature
 ```
 
 **2.**
 
 ```
-Velku pozornost venovat zakladnym dokumentom, ktore davaju AI kontext, ako tech stack, copilot instructions, agent.md ... Treba ich po vygenerovani poriadne zrevidovat (pozor aj na cisla verzii kniznic) a udrziavat aktualne.
+Veľkú pozornosť venovať základným dokumentom, ktoré dávajú AI kontext, ako tech stack, copilot instructions, agent.md ... Treba ich po vygenerovaní poriadne zrevidovať (pozor aj na čísla verzií knižníc) a udržiavať aktuálne.
 ```
 
 **3.**
 
 ```
-Pouzit Claude Opus 4.5 na vytvorenie planu implementacia a realizaciu komplikovanejsieho planu. Pouzit Claude Sonnet 4.5 na jednoduchsie zmeny (refactoring / upravy vramci jedneho suboru).
+Použiť Claude Opus 4.5 na vytvorenie plánu implementácie a realizáciu komplikovanejšieho plánu. Použiť Claude Sonnet 4.5 na jednoduchšie zmeny (refactoring / úpravy vrámci jedného súboru).
 ```
 
 **4.**
 
 ```
-Vzdy dat pristup agentovi ku aktualnej dokumentacii cez context7 (az na trivialne zmeny) a zaroven spomenut kniznice, ktore v danej ulohe bude potrebovat (react-query, next-auth, tailwind ...) Verzie vsetkych dolezitych kniznic v projekte maju byt uvedene v dokumente, ktory je vzdy v kontexte (copilot-instructions alebo agents.md)
+Vždy dať prístup agentovi ku aktuálnej dokumentácii cez context7 (až na triviálne zmeny) a zároveň spomenúť knižnice, ktoré v danej úlohe bude potrebovať (react-query, next-auth, tailwind ...) Verzie všetkých dôležitých knižníc v projekte majú byť uvedené v dokumente, ktorý je vždy v kontexte (copilot-instructions alebo agents.md)
 ```
 
 **5.**
 
 ```
-Neuspokojit za, ze vygenerovany kod funguje, spravit poriadne code review, zrefaktorovat co sa da.
+Neuspokojiť sa, že vygenerovaný kód funguje, spraviť poriadne code review, zrefaktorovať čo sa dá.
 ```
 
 ---
@@ -702,19 +702,19 @@ Neuspokojit za, ze vygenerovany kod funguje, spravit poriadne code review, zrefa
 **Tip #1:**
 
 ```
-Pouzivaj context7 MCP tool pre dokumentaciu a Figma MCP tool pre napojenie na Figmu. S tymito dvoma si vacsinou vystacis (prilis vela toolov zahlcuje kontext).
+Používaj context7 MCP tool pre dokumentáciu a Figma MCP tool pre napojenie na Figmu. S týmito dvoma si väčšinou vystačíš (príliš veľa toolov zahľcuje kontext).
 ```
 
 **Tip #2:**
 
 ```
-Pre ficury si najprv vygeneruj implementacny plan, ktory az po zrevivani a pripadnej uprave nechaj AI implementovat. Pre planovanie pouzi silnejsi (a drahsi) model ako napr. Claude Opus 4.5, pre implementaciu mensich veci staci lacnejsi, napr. Claude Sonnet 4.5
+Pre featury si najprv vygeneruj implementačný plán, ktorý až po zrevidovaní a prípadnej úprave nechaj AI implementovať. Pre plánovanie použi silnejší (a drahší) model ako napr. Claude Opus 4.5, pre implementáciu menších vecí stačí lacnejší, napr. Claude Sonnet 4.5
 ```
 
 **Tip #3:**
 
 ```
-Vytvor si dobry tech stack dokument so zakladnymi instrukciami pre AI agenta, ktory ma vzdy v kontexte. Tento dokument udrziavaj, nech je vzdy aktualny.
+Vytvor si dobrý tech stack dokument so základnými inštrukciami pre AI agenta, ktorý má vždy v kontexte. Tento dokument udržiavaj, nech je vždy aktuálny.
 ```
 
 ---
@@ -728,7 +728,7 @@ Vytvor si dobry tech stack dokument so zakladnymi instrukciami pre AI agenta, kt
 **Prečo?**
 
 ```
-Vie vyborne pracovat s toolmi pre dokumentaciu a Figmu, dokaze vytvorit podrobny plan implementacie a nasledne cely plan krok za krokom aj implementovat. Velmi dobre komentuje co robi, co developerovi pomaha lepsie rozumiet vygenerovanemu kodu a celemu projektu. Tento model je tiez dostatocne rychly a stabilny.
+Vie výborne pracovať s toolmi pre dokumentáciu a Figmu, dokáže vytvoriť podrobný plán implementácie a následne celý plán krok za krokom aj implementovať. Veľmi dobre komentuje čo robí, čo developerovi pomáha lepšie rozumieť vygenerovanému kódu a celému projektu. Tento model je tiež dostatočne rýchly a stabilný.
 ```
 
 **Ktorý nástroj bol najmenej užitočný?** **\*\***\*\*\*\***\*\***GPT-5.2**\*\***\*\*\*\***\*\***
@@ -736,7 +736,7 @@ Vie vyborne pracovat s toolmi pre dokumentaciu a Figmu, dokaze vytvorit podrobny
 **Prečo?**
 
 ```
-Je pomalsi ako Claude Opus 4.5 a nekomentuje poriadne co robi - developer musi stravit viac casu pri code review
+Je pomalší ako Claude Opus 4.5 a nekomentuje poriadne čo robí - developer musí stráviť viac času pri code review
 ```
 
 ---
@@ -744,7 +744,7 @@ Je pomalsi ako Claude Opus 4.5 a nekomentuje poriadne co robi - developer musi s
 ### 6.2 Najväčšie prekvapenie
 
 ```
-Claude Opus 4.5 dokazal celu GitHub OAuth Dashboard feature naprogramovat sam s pomocou dvoch promptov (jeden na naplanovanie a druhy na implementaciu) za cca 10 minut, teda menej ako mi trvalo napisanie tych promptov :)
+Claude Opus 4.5 dokázal celú GitHub OAuth Dashboard feature naprogramovať sám s pomocou dvoch promptov (jeden na naplánovanie a druhý na implementáciu) za cca 10 minút, teda menej ako mi trvalo napísanie tých promptov :)
 ```
 
 ---
@@ -752,7 +752,7 @@ Claude Opus 4.5 dokazal celu GitHub OAuth Dashboard feature naprogramovat sam s 
 ### 6.3 Najväčšia frustrácia
 
 ```
-Zistenie, ze svg assety, ktore AI importla z Figmy su niektore zle a teda ze musim vsetky skontrolovat a importnut este raz manualne.
+Zistenie, že svg assety, ktoré AI importla z Figmy sú niektoré zle a teda že musím všetky skontrolovať a importnúť ešte raz manuálne.
 ```
 
 ---
@@ -760,7 +760,7 @@ Zistenie, ze svg assety, ktore AI importla z Figmy su niektore zle a teda ze mus
 ### 6.4 Najväčší "AHA!" moment
 
 ```
-Ked som zabudol updatnut tech stack dokument a potom sa cudoval, preco AI chce pouzit inu verziu next-auth ako je v projekte nainstalovana
+Keď som zabudol updatnúť tech stack dokument a potom sa čudoval, prečo AI chce použiť inú verziu next-auth ako je v projekte nainštalovaná
 ```
 
 ---
@@ -768,11 +768,11 @@ Ked som zabudol updatnut tech stack dokument a potom sa cudoval, preco AI chce p
 ### 6.5 Čo by som urobil inak
 
 ```
-Vacsiu pozornost dal vygenerovanym source-of-truth kontextovym dokumentom, aby boli tip-top. Nasledne aj prvu feature by som skusil nechat AI agenta implementovat celu v dvoch krokoch - planovanie -> implementacia. Tam som viac casu stravil pripravou jednotlivych komponentov v samostatnych promptoch, co zabralo viac casu.
+Väčšiu pozornosť dal vygenerovaným source-of-truth kontextovým dokumentom, aby boli tip-top. Následne aj prvú feature by som skúsil nechať AI agenta implementovať celú v dvoch krokoch - plánovanie -> implementácia. Tam som viac času strávil prípravou jednotlivých komponentov v samostatných promptoch, čo zabralo viac času.
 ```
 
 ### 6.6 Hlavný odkaz pre ostatných
 
 ```
-With great power comes great responsibility. AI ti usetri mnozstvo casu, ak nebudes lenivy nastavit kontext, pisat dobre prompty a rozumiet co od AI chces aj vsetkemu co vygeneruje. Naopak, v rukach leniveho programatora je AI uzasnym nastrojom skazy na rychle generovanie mnozstva nekvalitneho kodu, ktorym bude frustrovat svojich kolegov.
+With great power comes great responsibility. AI ti ušetrí množstvo času, ak nebudeš lenivý nastaviť kontext, písať dobre prompty a rozumieť čo od AI chceš aj všetkému čo vygeneruje. Naopak, v rukách lenivého programátora je AI úžasným nástrojom skázy na rýchle generovanie množstva nekvalitného kódu, ktorým bude frustrovať svojich kolegov.
 ```
